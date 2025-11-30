@@ -2,6 +2,7 @@ package com.navigator.controller;
 
 import com.navigator.agent.AgentState;
 import com.navigator.agent.DiagnosticianAgent;
+import com.navigator.config.OpenAIConfig;
 import com.navigator.model.request.EvaluateRequest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,9 @@ public class EvaluationControllerTest {
 
     @MockBean
     private DiagnosticianAgent diagnosticianAgent;
+    
+    @MockBean
+    private OpenAIConfig openAIConfig;
 
     @Test
     public void testEvaluateEndpoint() {
