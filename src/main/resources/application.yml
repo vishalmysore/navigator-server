@@ -1,0 +1,51 @@
+server:
+  port: 8000
+
+spring:
+  application:
+    name: navigator
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+# OpenAI Configuration
+openai:
+  api-key: ${OPENAI_API_KEY:test-key}
+  model: gpt-4o-mini
+  embedding-model: text-embedding-3-small
+  max-tokens: 500
+
+# Qdrant Configuration
+qdrant:
+  url: ${QDRANT_URL:./qdrant_local}
+  collection-name: ${COLLECTION_NAME:science_curriculum_g3_g6}
+  vector-size: 1536
+
+# Tavily Search API
+tavily:
+  api-key: ${TAVILY_API_KEY:}
+  max-results: 5
+
+# Cohere API
+cohere:
+  api-key: ${COHERE_API_KEY:}
+
+# Storage Configuration
+storage:
+  conversations-file: ${CONVERSATIONS_FILE:/tmp/conversations.json}
+  rag-index-file: ${RAG_INDEX_FILE:/tmp/rag_index.json}
+  knowledge-base-path: ${KNOWLEDGE_BASE_PATH:knowledge}
+
+# CORS Configuration
+cors:
+  allowed-origins: "*"
+  allowed-methods: "*"
+  allowed-headers: "*"
+  allow-credentials: true
+
+# Logging
+logging:
+  level:
+    com.navigator: DEBUG
+    org.springframework: INFO
