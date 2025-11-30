@@ -14,7 +14,7 @@
 
     <groupId>com.navigator</groupId>
     <artifactId>navigator-backend</artifactId>
-    <version>1.0.0</version>
+    <version>0.0.2</version>
     <name>Navigator Backend</name>
     <description>Educational AI Diagnostician - Java Backend</description>
 
