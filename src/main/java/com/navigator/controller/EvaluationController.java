@@ -2,6 +2,7 @@ package com.navigator.controller;
 
 import com.navigator.agent.AgentState;
 import com.navigator.agent.DiagnosticianAgent;
+import com.navigator.config.OpenAIConfig;
 import com.navigator.model.request.EvaluateRequest;
 import com.navigator.model.response.EvaluationResponse;
 import lombok.extern.slf4j.Slf4j;
@@ -21,9 +22,11 @@ import java.util.Map;
 public class EvaluationController {
 
     private final DiagnosticianAgent diagnosticianAgent;
+    private final OpenAIConfig openAIConfig;
 
-    public EvaluationController(DiagnosticianAgent diagnosticianAgent) {
+    public EvaluationController(DiagnosticianAgent diagnosticianAgent, OpenAIConfig openAIConfig) {
         this.diagnosticianAgent = diagnosticianAgent;
+        this.openAIConfig = openAIConfig;
     }
 
     /**
@@ -40,7 +43,11 @@ public class EvaluationController {
             state.setQuestion(request.getQuestion());
             state.setAnswer(request.getAnswer());
             state.setContext(request.getContext());
-            state.setApiKey(request.getApiKey());
+            // Use provided API key or fall back to configured one
+            String apiKey = (request.getApiKey() != null && !request.getApiKey().isBlank()) 
+                    ? request.getApiKey() 
+                    : openAIConfig.getApiKey();
+            state.setApiKey(apiKey);
 
             // Execute diagnostic agent
             AgentState result = diagnosticianAgent.execute(state);

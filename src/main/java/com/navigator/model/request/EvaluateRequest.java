@@ -17,6 +17,5 @@ public class EvaluateRequest {
 
     private String context = "";
 
-    @NotBlank(message = "API key is required")
     private String apiKey;
 }
