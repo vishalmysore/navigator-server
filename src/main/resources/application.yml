@@ -40,7 +40,7 @@ storage:
 
 # CORS Configuration
 cors:
-  allowed-origins: "*"
+  allowed-origins: "https://vishalmysore.github.io"
   allowed-methods: "*"
   allowed-headers: "*"
   allow-credentials: true
