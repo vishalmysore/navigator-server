@@ -30,7 +30,7 @@ public class NavigatorApplication {
     @EventListener(ApplicationReadyEvent.class)
     public void onStartup() {
         log.info("🚀 Navigator application started successfully");
-        log.info("📚 Backend running on http://localhost:8000");
+        log.info("📚 Backend running on http://localhost:7860");
         log.info("💡 Use /api/health to check system status");
     }
 }
