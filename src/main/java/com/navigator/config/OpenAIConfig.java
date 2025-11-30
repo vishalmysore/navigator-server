@@ -12,7 +12,7 @@ import lombok.Getter;
 @Getter
 public class OpenAIConfig {
 
-    @Value("${openai.api-key}")
+    @Value("${openai_api_key}")
     private String apiKey;
 
     @Value("${openai.model:gpt-4o-mini}")

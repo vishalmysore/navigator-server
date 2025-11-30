@@ -33,7 +33,7 @@ public class RAGController {
     private final RAGService ragService;
     private final ConversationService conversationService;
     
-    @Value("${openai.api-key}")
+    @Value("${openai_api_key}")
     private String openaiApiKey;
 
     public RAGController(RAGService ragService, ConversationService conversationService) {

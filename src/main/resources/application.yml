@@ -10,8 +10,9 @@ spring:
       max-request-size: 10MB
 
 # OpenAI Configuration
+openai_api_key: ${OPENAI_API_KEY:test-key}
+
 openai:
-  api-key: ${OPENAI_API_KEY:test-key}
   model: gpt-4o-mini
   embedding-model: text-embedding-3-small
   max-tokens: 500
@@ -23,13 +24,13 @@ qdrant:
   vector-size: 1536
 
 # Tavily Search API
+tavily_api_key: ${TAVILY_API_KEY:}
+
 tavily:
-  api-key: ${TAVILY_API_KEY:}
   max-results: 5
 
 # Cohere API
-cohere:
-  api-key: ${COHERE_API_KEY:}
+cohere_api_key: ${COHERE_API_KEY:}
 
 # Storage Configuration
 storage:

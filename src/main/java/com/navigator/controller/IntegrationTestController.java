@@ -30,13 +30,13 @@ public class IntegrationTestController {
     private final OpenAIService openAIService;
     private final OpenAIConfig openAIConfig;
     
-    @Value("${openai.api-key}")
+    @Value("${openai_api_key}")
     private String openaiApiKey;
     
-    @Value("${cohere.api-key:}")
+    @Value("${cohere_api_key:}")
     private String cohereApiKey;
     
-    @Value("${tavily.api-key:}")
+    @Value("${tavily_api_key:}")
     private String tavilyApiKey;
 
     public IntegrationTestController(OpenAIService openAIService, OpenAIConfig openAIConfig) {
