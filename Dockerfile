@@ -5,7 +5,7 @@ WORKDIR /ai
 
 # Define the version as a build argument
 ARG VERSION=0.0.2
-ARG REPO=navigator-server
+ARG REPO=navigator-backend
 ARG REPO_OWNER=vishalmysore
 
 # Download the JAR file using curl with the version variable
